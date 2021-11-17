@@ -10,7 +10,7 @@ import React from "react";
 export const ConnectButton = () => {
 	return (
 		<div>
-			<button className="btn bg-indigo-700 hover:bg-indigo-900 px-4 py-4 mx-2  rounded-md text-lg font-black">
+			<button className="btn bg-indigo-700 hover:bg-indigo-900 px-4 py-4 mx-2  rounded text-lg font-bold">
 				Connect Wallet
 			</button>
 		</div>

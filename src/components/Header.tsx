@@ -32,9 +32,9 @@ const Header = () => {
 			<nav className="fixed w-full bg-black justify-between items-center flex flex-row h-24 px-4 py-2">
 				<div
 					onClick={() => scroll.scrollToTop()}
-					className="brand font-bold text-4xl uppercase cursor-pointer"
+					className="brand font-bold tracking-widest text-4xl uppercase cursor-pointer"
 				>
-					this is the header
+					Rig
 				</div>
 				<div className="menu">
 					<nav className="flex justify-around items-center px-2 font-light text-lg ">
