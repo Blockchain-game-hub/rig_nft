@@ -5,9 +5,9 @@ import Header from "./Header";
 // TODO: change to react components after for chilren.
 function Layout({ children }: any) {
 	return (
-		<div>
+		<div className="bg-gray-800 text-white flex flex-col h-screen">
 			<Header />
-			{children}
+			<main className="flex-grow">{children}</main>
 			<Footer />
 		</div>
 	);

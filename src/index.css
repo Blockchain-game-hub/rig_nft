@@ -1,7 +1,7 @@
 /* tailwind config */
 @tailwind base;
 @tailwind components;
-@tailwind utlities;
+@tailwind utilities;
 
 body {
 	margin: 0;
