@@ -16,7 +16,7 @@ interface INames {
 export const NavLinkBtn = ({ _className, toName, children }: INames) => {
 	return (
 		<div>
-			<div className="px-2">
+			<div className="px-6">
 				<Link
 					activeClass="active"
 					className={_className}
