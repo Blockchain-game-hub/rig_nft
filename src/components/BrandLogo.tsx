@@ -7,16 +7,10 @@ export const BrandLogo = ({ _onClick }: IEventHandler) => {
 	return (
 		<div
 			onClick={_onClick}
-			className="brand-section flex flex-row items-center cursor-pointer"
+			className="cursor-pointer items-center flex"
 		>
-			<img
-				className="transform scale-50 px-0 mx-0"
-				src="token_sm_icon.png"
-				alt=""
-			/>
-			<div className="brand-name font-bold text-6xl uppercase text-left px-0">
-				Rig
-			</div>
+			<img className="px-2" src="miner_icon_xs.png" alt="" />
+			<p className="brand-name font-bold text-6xl uppercase">Rig</p>
 		</div>
 	);
 };

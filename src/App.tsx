@@ -4,13 +4,14 @@ import "./App.css";
 import Layout from "./components/Layout";
 import { AboutSection } from "./sections/AboutSection";
 import { BuyNowSection } from "./sections/BuyNowSection";
+import { RigSection } from "./sections/RigSection";
 
 function App() {
 	return (
 		<div className="App">
 			<Layout>
 				<Element name="test1" className="element">
-					<AboutSection />
+					<RigSection />
 				</Element>
 				<AboutSection />
 				<br />

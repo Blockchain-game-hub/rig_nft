@@ -2,11 +2,13 @@ import React from "react";
 
 export const AboutSection = () => {
 	return (
-		<div>
-			<main className="bg-indigo-900 h-96 px-4 py-4 my-20">
-				<h1>About</h1>
-				<p>this is the about section</p>
-			</main>
+		<div className="bg-indigo-900 h-72 w-full px-4 py-4 my-20 ">
+			<h2 className="text-3xl font-bold">About</h2>
+			<br />
+			<p className="text-xl text-center">
+				This game is a product of web3 hackers. Build for a
+				Chainlink hackathon competition of 2021.
+			</p>
 		</div>
 	);
 };
