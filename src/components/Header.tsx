@@ -7,8 +7,10 @@
  */
 import React from "react";
 import { Link, Events, animateScroll as scroll, scroller } from "react-scroll";
+import { scrollToTop } from "react-scroll/modules/mixins/animate-scroll";
 import { BuyButton } from "./BuyButton";
 import { ConnectButton } from "./ConnectButton";
+import { NavLinkBtn } from "./NavLinkBtn";
 
 const Header = () => {
 	React.useEffect(() => {
@@ -24,34 +26,34 @@ const Header = () => {
 	}, []);
 
 	// // ScrollToTop - scrolls user back to top. NOTE: have this link to a floating element somewhere.
-	function scrollToTop() {
-		scroll.scrollToTop();
-	}
 
 	return (
 		<div>
-			<nav className="outline-black justify-between items-center flex flex-row h-24 px-4 py-2">
-				<div className="brand font-bold text-4xl uppercase cursor-pointer">
+			<nav className="fixed w-full bg-black justify-between items-center flex flex-row h-24 px-4 py-2">
+				<div
+					onClick={() => scroll.scrollToTop()}
+					className="brand font-bold text-4xl uppercase cursor-pointer"
+				>
 					this is the header
 				</div>
 				<div className="menu">
 					<nav className="flex justify-around items-center px-2 font-light text-lg ">
 						{/* NOTE: These will be links. */}
 						<div className="px-2">
-							<Link
-								activeClass="active"
-								className="test1"
-								to="test1"
-								spy={true}
-								smooth={true}
-								duration={500}
+							<NavLinkBtn
+								_className="test1"
+								toName="test1"
 							>
-								Link 1
-							</Link>
+								<p>Link 1</p>
+							</NavLinkBtn>
 						</div>
-						<div className="px-2">link 2</div>
+						<NavLinkBtn
+							_className="test2"
+							toName="test2"
+						>
+							<p>Link 2</p>
+						</NavLinkBtn>
 						<ConnectButton />
-						<BuyButton />
 					</nav>
 				</div>
 			</nav>
