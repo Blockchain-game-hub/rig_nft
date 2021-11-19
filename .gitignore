@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Extra images that dont need to take up space on github. 
+public/whole-
+
+# Extra images that dont need to take up space on github. 
+public/whole-rig.gif
