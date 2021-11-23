@@ -8,11 +8,11 @@
 import React from "react";
 
 export const ConnectButton = () => {
-	return (
-		<div>
-			<button className="bg-indigo-700 hover:bg-indigo-900 px-2 py-4 mx-2 rounded font-bold">
-				Connect Wallet
-			</button>
-		</div>
-	);
+  return (
+    <div>
+      <button className="bg-indigo-700 hover:bg-indigo-900 px-2 py-2 mx-2 rounded">
+        <p>Connect Wallet</p>
+      </button>
+    </div>
+  );
 };
