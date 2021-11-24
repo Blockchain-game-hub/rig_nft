@@ -6,8 +6,7 @@ import React from "react";
 export const RigSection = () => {
   return (
     <div className="w-full h-96 flex-grow overflow-hidden">
-      <p>this is the rig section, image will go here.</p>
-      {/* <img className="" src="minigif.gif" alt="" /> */}
+      <img className=" scale-auto min-h-full" src="minigif.gif" alt="" />
     </div>
   );
 };

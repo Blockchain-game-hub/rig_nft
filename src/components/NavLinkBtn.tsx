@@ -1,30 +1,17 @@
-import React, {
-  Children,
-  PropsWithChildren,
-  ReactChildren,
-  ReactPropTypes,
-} from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 // INames - props for the NavLinkBtn to take in.
 interface INames {
   _className: string;
-  toName: string;
+  _toName: string;
   children: any;
 }
 
-export const NavLinkBtn = ({ _className, toName, children }: INames) => {
+export const NavLinkBtn = ({ _className, _toName, children }: INames) => {
   return (
     <div>
       <div className="px-6">
-        <Link
-          activeClass="active"
-          className={_className}
-          to={toName}
-          spy={true}
-          smooth={true}
-          duration={500}
-        >
+        <Link className={_className} to={_toName}>
           {children}
         </Link>
       </div>
