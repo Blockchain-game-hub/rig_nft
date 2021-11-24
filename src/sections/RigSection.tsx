@@ -6,13 +6,7 @@ import { CubeComp } from "../components/CubeComp";
 
 export const RigSection = () => {
   return (
-    <div className="w-full h-96 flex-grow overflow-hidden ">
-      <p className="text-xl">Build a rig and start mining!</p>
-      <img
-        className=" scale-auto min-h-full from-indigo-800 to-indigo-200 bg-gradient-to-t "
-        src="minigif.gif"
-        alt=""
-      />
+    <div className="w-full h-96 flex-grow  ">
       <CubeComp />
     </div>
   );

@@ -1,52 +1,36 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Canvas, ReactThreeFiber, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { Camera } from "three";
+import { Html, OrbitControls } from "@react-three/drei";
+import { MeshNormalMaterial } from "three";
+
+const CubeMesh = () => {
+  //   const meshRef = useRef<THREE.Mesh>(null);
+  //   useFrame(() => {
+  //     meshRef.current.rotation.y += 0.01 * 0.1;
+  //   });
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  return (
+    <mesh>
+      <boxGeometry args={[3, 3, 3]} />
+      <meshNormalMaterial />
+      <Html distanceFactor={10} transform onOcclude={() => setIsVisible}>
+        <span className="rounded bg-indigo-700 w-24 px-2 py-2 ">play now!</span>
+      </Html>
+    </mesh>
+  );
+};
 
 export const CubeComp = () => {
-  const mountRef = useRef(null);
-
-  const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight,
-  };
-
-  useEffect(() => {
-    // when window resizes, re-render scaling of renderer canvas.
-    let onWindowResize = () => {
-      sizes.width = window.innerWidth;
-      sizes.height = window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-    window.addEventListener("resize", onWindowResize, false);
-
-    let scene = new THREE.Scene();
-    let camera = new THREE.PerspectiveCamera(
-      75,
-      sizes.width / sizes.height,
-      0.1,
-      1000
-    );
-    camera.position.z = 5;
-
-    let renderer = new THREE.WebGLRenderer();
-    renderer.setSize(sizes.width, sizes.height);
-
-    let boxGeo = new THREE.BoxGeometry(1, 1, 1);
-    let boxMat = new THREE.MeshBasicMaterial({ color: "red" });
-    let cube = new THREE.Mesh(boxGeo, boxMat);
-    scene.add(cube);
-
-    let animate = function () {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 1;
-      renderer.render(scene, camera);
-    };
-    animate();
-
-    // attaches to our div
-    mountRef.current.appendChild(renderer.domElement);
-    return () => mountRef.current.removeChild(renderer.domElement);
-  }, []);
-  return <div ref={mountRef}></div>;
+  return (
+    <div className="canvas-container h-screen overflow-hidden bg-white w-full fixed">
+      <Canvas camera={{ fov: 75 }}>
+        <OrbitControls enableZoom={false}></OrbitControls>
+        <ambientLight intensity={0.1} />
+        <CubeMesh />
+      </Canvas>
+    </div>
+  );
 };
