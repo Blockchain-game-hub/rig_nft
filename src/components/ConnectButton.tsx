@@ -5,6 +5,7 @@
  * - security with wallet?
  * - other w3 stuff we need.
  */
+import { MORALIS_API, MORALIS_SECRET } from "../globals";
 import React, { useEffect } from "react";
 import axios from "axios";
 
@@ -16,7 +17,7 @@ interface IUserInfo {
 export const ConnectButton = () => {
   const [user, setUser] = React.useState();
   useEffect(() => {
-    axios.get("moralisapi").then();
+    axios.get("MORALIS_API").then();
   }, []);
 
   return (
