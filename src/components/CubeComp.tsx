@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import {
   Canvas,
   ReactThreeFiber,
@@ -20,25 +20,34 @@ const CubeMesh = () => {
   const [isVisible, setVisible] = useState(false);
   const { active, progress, errors, loaded } = useProgress();
   return (
-    <mesh rotation={[1, 0.75, 0]}>
-      <boxGeometry args={[3, 3, 3]} />
-      <meshPhongMaterial wireframe />
-      <Html distanceFactor={4.2} transform position={[0, 0, 1.52]}>
-        <button className="rounded bg-indigo-700 text-4xl w-72 h-72 px-2 py-2 hover:bg-indigo-900">
-          play now!
-        </button>
-      </Html>
-      <Html
-        transform
-        distanceFactor={4.2}
-        rotation={new THREE.Euler(0, 0.5 * Math.PI, 0)}
-        position={[1.52, 0, 0]}
-      >
-        <button className="bg-black text-4xl w-72 h-72 px-2 py-2 hover:bg-indigo-900">
-          About
-        </button>
-      </Html>
-    </mesh>
+    <Suspense
+      fallback={
+        <Html>
+          <h1>{progress}% ...loading</h1>
+        </Html>
+      }
+    >
+      <mesh rotation={[1, 0.75, 0]}>
+        <boxGeometry args={[3, 3, 3]} />
+        <meshPhongMaterial wireframe />
+        <Html occlude distanceFactor={4.2} transform position={[0, 0, 1.52]}>
+          <button className="rounded bg-indigo-700 text-4xl w-72 h-72 px-2 py-2 hover:bg-indigo-900">
+            play now!
+          </button>
+        </Html>
+        <Html
+          occlude
+          transform
+          distanceFactor={4.2}
+          rotation={new THREE.Euler(0, 0.5 * Math.PI, 0)}
+          position={[1.52, 0, 0]}
+        >
+          <button className="rounded bg-black text-4xl w-72 h-72 px-2 py-2 hover:bg-indigo-900">
+            About
+          </button>
+        </Html>
+      </mesh>
+    </Suspense>
   );
 };
 
