@@ -7,9 +7,9 @@
 import React from "react";
 
 export const DownloadSection = () => {
-	return (
-		<div>
-			<p>this is the download section</p>
-		</div>
-	);
+  return (
+    <div>
+      <p>this is the download section</p>
+    </div>
+  );
 };

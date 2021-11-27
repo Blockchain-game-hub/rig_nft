@@ -16,9 +16,6 @@ interface IUserInfo {
 
 export const ConnectButton = () => {
   const [user, setUser] = React.useState();
-  useEffect(() => {
-    axios.get("MORALIS_API").then();
-  }, []);
 
   return (
     <div>
