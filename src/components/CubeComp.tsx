@@ -41,6 +41,17 @@ const HTMLPages = () => {
           RIG
         </div>
       </Html>
+      <Html
+        occlude
+        transform
+        distanceFactor={4.2}
+        rotation={new THREE.Euler(0.5 * Math.PI, 1 * Math.PI, 1 * Math.PI)}
+        position={[0, -1.52, 0]}
+      >
+        <div className="rounded bg-indigo-700 text-4xl w-72 h-72 px-2 py-2 hover:bg-indigo-900">
+          Card 3
+        </div>
+      </Html>
     </>
   );
 };
@@ -49,9 +60,8 @@ const CubeMesh = () => {
   const [isVisible, setVisible] = useState(false);
   return (
     <mesh rotation={[1, 0.75, 0]}>
-      {/* <boxGeometry args={[3, 3, 3]} /> */}
+      <boxGeometry args={[3, 3, 3]} />
       <HTMLPages />
-      <meshNormalMaterial wireframe />
     </mesh>
   );
 };
